@@ -1,0 +1,313 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  /* Suman Store theme with purple accent */
+  --background: oklch(0.35 0.15 280); /* Purple base */
+  --foreground: oklch(0.98 0 0); /* White text */
+  --card: oklch(0.45 0.12 280); /* Purple card */
+  --card-foreground: oklch(0.98 0 0);
+  --popover: oklch(0.4 0.13 280);
+  --popover-foreground: oklch(0.98 0 0);
+  --primary: oklch(0.5 0.18 280); /* Purple primary */
+  --primary-foreground: oklch(0.98 0 0);
+  --secondary: oklch(0.55 0.1 280);
+  --secondary-foreground: oklch(0.98 0 0);
+  --muted: oklch(0.4 0.08 280);
+  --muted-foreground: oklch(0.85 0 0);
+  --accent: oklch(0.5 0.18 280);
+  --accent-foreground: oklch(0.98 0 0);
+  --destructive: oklch(0.55 0.22 25);
+  --destructive-foreground: oklch(0.98 0 0);
+  --border: oklch(0.6 0.08 280);
+  --input: oklch(0.45 0.1 280);
+  --ring: oklch(0.5 0.18 280);
+  --chart-1: oklch(0.5 0.18 280);
+  --chart-2: oklch(0.6 0.15 300);
+  --chart-3: oklch(0.65 0.18 260);
+  --chart-4: oklch(0.7 0.2 240);
+  --chart-5: oklch(0.6 0.19 320);
+  --radius: 0.75rem;
+  --sidebar: oklch(0.4 0.13 280);
+  --sidebar-foreground: oklch(0.98 0 0);
+  --sidebar-primary: oklch(0.5 0.18 280);
+  --sidebar-primary-foreground: oklch(0.98 0 0);
+  --sidebar-accent: oklch(0.45 0.12 280);
+  --sidebar-accent-foreground: oklch(0.98 0 0);
+  --sidebar-border: oklch(0.6 0.08 280);
+  --sidebar-ring: oklch(0.5 0.18 280);
+}
+
+.dark {
+  --background: oklch(0.12 0 0);
+  --foreground: oklch(0.98 0 0);
+  --card: oklch(0.18 0 0);
+  --card-foreground: oklch(0.98 0 0);
+  --popover: oklch(0.15 0 0);
+  --popover-foreground: oklch(0.98 0 0);
+  --primary: oklch(0.55 0.22 25);
+  --primary-foreground: oklch(0.98 0 0);
+  --secondary: oklch(0.25 0 0);
+  --secondary-foreground: oklch(0.98 0 0);
+  --muted: oklch(0.22 0 0);
+  --muted-foreground: oklch(0.65 0 0);
+  --accent: oklch(0.55 0.22 25);
+  --accent-foreground: oklch(0.98 0 0);
+  --destructive: oklch(0.55 0.22 25);
+  --destructive-foreground: oklch(0.98 0 0);
+  --border: oklch(0.28 0 0);
+  --input: oklch(0.25 0 0);
+  --ring: oklch(0.55 0.22 25);
+  --chart-1: oklch(0.55 0.22 25);
+  --chart-2: oklch(0.6 0.15 280);
+  --chart-3: oklch(0.65 0.18 180);
+  --chart-4: oklch(0.7 0.2 60);
+  --chart-5: oklch(0.6 0.19 340);
+  --sidebar: oklch(0.15 0 0);
+  --sidebar-foreground: oklch(0.98 0 0);
+  --sidebar-primary: oklch(0.55 0.22 25);
+  --sidebar-primary-foreground: oklch(0.98 0 0);
+  --sidebar-accent: oklch(0.22 0 0);
+  --sidebar-accent-foreground: oklch(0.98 0 0);
+  --sidebar-border: oklch(0.28 0 0);
+  --sidebar-ring: oklch(0.55 0.22 25);
+}
+
+@theme inline {
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    /* Enhanced gradient with more vibrant colors */
+    background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 25%, #a855f7 50%, #ec4899 75%, #f97316 100%);
+    background-size: 400% 400%;
+    animation: gradient-shift 15s ease infinite;
+    @apply bg-background text-foreground;
+    overflow-x: hidden;
+  }
+}
+
+@layer utilities {
+  /* Add glassmorphism and neon glow effects */
+  .glass {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+  }
+
+  .glass-card {
+    background: rgba(139, 92, 246, 0.3);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+  }
+
+  .neon-glow {
+    box-shadow: 0 0 10px rgba(239, 68, 68, 0.8), 0 0 20px rgba(239, 68, 68, 0.6), 0 0 30px rgba(239, 68, 68, 0.4);
+  }
+
+  .neon-text {
+    text-shadow: 0 0 10px rgba(236, 72, 153, 0.8), 0 0 20px rgba(236, 72, 153, 0.6), 0 0 30px rgba(236, 72, 153, 0.4), 0
+      0 40px rgba(168, 85, 247, 0.3);
+  }
+
+  /* Added discount banner animations */
+  .animate-gradient-x {
+    background-size: 200% 200%;
+    animation: gradient-x 3s ease infinite;
+  }
+}
+
+/* Added gradient shift animation for background */
+@keyframes gradient-shift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Added particle floating animation matching original */
+@keyframes float {
+  0% {
+    transform: translateY(0) translateX(0) rotate(0deg);
+    opacity: 0.4;
+  }
+  25% {
+    opacity: 0.6;
+  }
+  50% {
+    transform: translateY(-80px) translateX(50px) rotate(180deg);
+    opacity: 0.8;
+  }
+  75% {
+    opacity: 0.6;
+  }
+  100% {
+    transform: translateY(0) translateX(0) rotate(360deg);
+    opacity: 0.4;
+  }
+}
+
+.particle {
+  position: absolute;
+  border-radius: 50%;
+  opacity: 0.6;
+  background: rgba(255, 255, 255, 0.15);
+  animation: float 10s linear infinite;
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Added 3D effects and animations */
+@keyframes cart-bounce {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+}
+
+.cart-bounce {
+  animation: cart-bounce 0.6s ease;
+}
+
+@keyframes pulse-glow {
+  0%,
+  100% {
+    box-shadow: 0 0 10px rgba(239, 68, 68, 0.8);
+  }
+  50% {
+    box-shadow: 0 0 20px rgba(239, 68, 68, 1), 0 0 30px rgba(239, 68, 68, 0.6);
+  }
+}
+
+.pulse-glow {
+  animation: pulse-glow 2s ease-in-out infinite;
+}
+
+.button-3d {
+  transform-style: preserve-3d;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.button-3d:hover {
+  transform: translateY(-2px) scale(1.05);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+}
+
+.button-3d:active {
+  transform: translateY(0) scale(0.98);
+}
+
+.card-3d {
+  transform-style: preserve-3d;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.card-3d:hover {
+  transform: translateY(-5px) rotateX(2deg);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
+}
+
+.product-hover {
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.product-hover:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 20px 50px rgba(168, 85, 247, 0.4);
+}
+
+.logo-3d {
+  transition: transform 0.3s ease;
+}
+
+.logo-3d:hover {
+  transform: rotateY(360deg);
+}
+
+.hover-3d {
+  transition: transform 0.3s ease;
+}
+
+.hover-3d:hover {
+  transform: scale(1.05);
+}
+
+.input-3d {
+  transition: all 0.3s ease;
+}
+
+.input-3d:focus {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(168, 85, 247, 0.3);
+}
+
+/* Enhanced neon effects */
+.neon-text {
+  text-shadow: 0 0 10px rgba(236, 72, 153, 0.8), 0 0 20px rgba(236, 72, 153, 0.6), 0 0 30px rgba(236, 72, 153, 0.4), 0 0
+    40px rgba(168, 85, 247, 0.3);
+}
+
+.neon-glow {
+  box-shadow: 0 0 10px rgba(239, 68, 68, 0.8), 0 0 20px rgba(239, 68, 68, 0.6), 0 0 30px rgba(239, 68, 68, 0.4);
+}
+
+@keyframes gradient-x {
+  0%,
+  100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
